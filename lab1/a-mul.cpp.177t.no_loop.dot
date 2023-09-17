@@ -1,0 +1,38 @@
+digraph "a-mul.cpp.177t.no_loop" {
+overlap=false;
+subgraph "cluster___static_initialization_and_destruction_0.constprop" {
+	style="dashed";
+	color="black";
+	label="__static_initialization_and_destruction_0.constprop ()";
+	fn_2278_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_2278_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_2278_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{COUNT:1073741824\<bb\ 2\>:\l\
+|std::ios_base::Init::Init\ (&__ioinit);\l\
+|__cxxabiv1::__cxa_atexit\ (__dt_comp\ ,\ &__ioinit,\ &__dso_handle);\l\
+|return;\l\
+}"];
+
+	fn_2278_basic_block_0:s -> fn_2278_basic_block_2:n [style="solid,bold",color=blue,weight=100,constraint=true,label="[100%]"];
+	fn_2278_basic_block_2:s -> fn_2278_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true,label="[100%]"];
+	fn_2278_basic_block_0:s -> fn_2278_basic_block_1:n [style="invis",constraint=true];
+}
+subgraph "cluster__GLOBAL__sub_I_main" {
+	style="dashed";
+	color="black";
+	label="_GLOBAL__sub_I_main ()";
+	fn_2277_basic_block_0 [shape=Mdiamond,style=filled,fillcolor=white,label="ENTRY"];
+
+	fn_2277_basic_block_1 [shape=Mdiamond,style=filled,fillcolor=white,label="EXIT"];
+
+	fn_2277_basic_block_2 [shape=record,style=filled,fillcolor=lightgrey,label="{COUNT:1073741824\<bb\ 2\>:\l\
+|__static_initialization_and_destruction_0.constprop\ ();\l\
+|return;\l\
+}"];
+
+	fn_2277_basic_block_0:s -> fn_2277_basic_block_2:n [style="solid,bold",color=blue,weight=100,constraint=true,label="[100%]"];
+	fn_2277_basic_block_2:s -> fn_2277_basic_block_1:n [style="solid,bold",color=black,weight=10,constraint=true,label="[100%]"];
+	fn_2277_basic_block_0:s -> fn_2277_basic_block_1:n [style="invis",constraint=true];
+}
+}

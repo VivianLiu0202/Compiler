@@ -1,0 +1,414 @@
+
+;; Function std::basic_ostream<char>::operator<< (_ZNSolsEPFRSoS_E, funcdef_no=2038, decl_uid=43971, cgraph_uid=772, symbol_order=805)
+
+modref analyzing 'std::basic_ostream<char>::operator<<' (ipa=0)
+Analyzing flags of ssa name: this_4(D)
+  Analyzing stmt: _6 = __pf_2(D) (this_4(D));
+    Analyzing flags of ssa name: _6
+      Analyzing stmt: return _6;
+      current flags of _6 direct noclobber noescape nodirectescape
+    flags of ssa name _6 direct noclobber noescape nodirectescape
+  current flags of this_4(D)
+flags of ssa name this_4(D)
+Analyzing flags of ssa name: __pf_2(D)
+  Analyzing stmt: _6 = __pf_2(D) (this_4(D));
+  current flags of __pf_2(D) direct noescape nodirectescape
+flags of ssa name __pf_2(D) direct noescape nodirectescape
+ - Indirect call.
+ - modref done with result: tracked.
+  loads:
+    Limits: 32 bases, 16 refs
+    Every base
+  stores:
+    Limits: 32 bases, 16 refs
+    Every base
+  parm 1 flags: direct noescape nodirectescape
+struct __ostream_type & std::basic_ostream<char>::operator<< (struct basic_ostream * const this, struct __ostream_type & (*<T6878>) (struct __ostream_type &) __pf)
+{
+  struct __ostream_type & _6;
+
+  <bb 2> :
+  _6 = __pf_2(D) (this_4(D));
+  return _6;
+
+}
+
+
+
+;; Function std::flush<char, std::char_traits<char> > (_ZSt5flushIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_, funcdef_no=2117, decl_uid=44191, cgraph_uid=851, symbol_order=884)
+
+modref analyzing 'std::flush<char, std::char_traits<char> >' (ipa=0)
+Analyzing flags of ssa name: __os_2(D)
+  Analyzing stmt: _4 = std::basic_ostream<char>::flush (__os_2(D));
+    Analyzing flags of ssa name: _4
+      Analyzing stmt: return _4;
+      current flags of _4 direct noclobber noescape nodirectescape
+    flags of ssa name _4 direct noclobber noescape nodirectescape
+  current flags of __os_2(D)
+flags of ssa name __os_2(D)
+ - Function availability <= AVAIL_INTERPOSABLE.
+ - modref done with result: tracked.
+struct basic_ostream & std::flush<char, std::char_traits<char> > (struct basic_ostream & __os)
+{
+  struct basic_ostream & _4;
+
+  <bb 2> :
+  _4 = std::basic_ostream<char>::flush (__os_2(D));
+  return _4;
+
+}
+
+
+
+;; Function __static_initialization_and_destruction_0 (_Z41__static_initialization_and_destruction_0ii, funcdef_no=2276, decl_uid=51655, cgraph_uid=1010, symbol_order=1067)
+
+modref analyzing '__static_initialization_and_destruction_0' (ipa=0)
+Analyzing flags of ssa name: __initialize_p_2(D)
+  Analyzing stmt: if (__initialize_p_2(D) == 1)
+  current flags of __initialize_p_2(D) direct noclobber noescape nodirectescape unused
+flags of ssa name __initialize_p_2(D) direct noclobber noescape nodirectescape unused
+Analyzing flags of ssa name: __priority_4(D)
+  Analyzing stmt: if (__priority_4(D) == 65535)
+  current flags of __priority_4(D) direct noclobber noescape nodirectescape unused
+flags of ssa name __priority_4(D) direct noclobber noescape nodirectescape unused
+ - Function availability <= AVAIL_INTERPOSABLE.
+ - modref done with result: tracked.
+  loads:
+    Limits: 32 bases, 16 refs
+    Every base
+  stores:
+    Limits: 32 bases, 16 refs
+    Every base
+  parm 0 flags: direct noclobber noescape nodirectescape unused
+  parm 1 flags: direct noclobber noescape nodirectescape unused
+void __static_initialization_and_destruction_0 (int __initialize_p, int __priority)
+{
+  <bb 2> :
+  if (__initialize_p_2(D) == 1)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 3> :
+  if (__priority_4(D) == 65535)
+    goto <bb 4>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 4> :
+  std::ios_base::Init::Init (&__ioinit);
+  __cxxabiv1::__cxa_atexit (__dt_comp , &__ioinit, &__dso_handle);
+
+  <bb 5> :
+  return;
+
+}
+
+
+
+;; Function std::ctype<char>::widen (_ZNKSt5ctypeIcE5widenEc, funcdef_no=1524, decl_uid=39667, cgraph_uid=495, symbol_order=524)
+
+modref analyzing 'std::ctype<char>::widen' (ipa=0)
+Analyzing flags of ssa name: this_9(D)
+  Analyzing stmt: _15 = this_9(D)->_M_widen[_2];
+    Analyzing flags of ssa name: _15
+      Analyzing stmt: _6 = PHI <_15(3), _13(4)>
+        Analyzing flags of ssa name: _6
+          Analyzing stmt: return _6;
+          current flags of _6 direct noclobber noescape nodirectescape
+        flags of ssa name _6 direct noclobber noescape nodirectescape
+      current flags of _15 direct noclobber noescape nodirectescape
+    flags of ssa name _15 direct noclobber noescape nodirectescape
+  current flags of this_9(D) noclobber noescape nodirectescape
+  Analyzing stmt: _13 = OBJ_TYPE_REF(_5;(const struct ctype)this_9(D)->6) (this_9(D), __c_11(D));
+    Analyzing flags of ssa name: _13
+      Analyzing stmt: _6 = PHI <_15(3), _13(4)>
+      current flags of _13 direct noclobber noescape nodirectescape
+    flags of ssa name _13 direct noclobber noescape nodirectescape
+  current flags of this_9(D)
+flags of ssa name this_9(D)
+Analyzing flags of ssa name: __c_11(D)
+  Analyzing stmt: _2 = (int) __c_11(D);
+    Analyzing flags of ssa name: _2
+      Analyzing stmt: _15 = this_9(D)->_M_widen[_2];
+      current flags of _2 direct noclobber noescape nodirectescape unused
+    flags of ssa name _2 direct noclobber noescape nodirectescape unused
+  current flags of __c_11(D) direct noclobber noescape nodirectescape unused
+  Analyzing stmt: _13 = OBJ_TYPE_REF(_5;(const struct ctype)this_9(D)->6) (this_9(D), __c_11(D));
+  current flags of __c_11(D)
+flags of ssa name __c_11(D)
+ - Analyzing load: this_9(D)->_M_widen_ok
+   - Recording base_set=0 ref_set=0 parm=0
+ - Analyzing load: this_9(D)->_M_widen[_2]
+   - Recording base_set=0 ref_set=0 parm=0
+ - Function availability <= AVAIL_INTERPOSABLE.
+ - modref done with result: tracked.
+char_type std::ctype<char>::widen (const struct ctype * const this, char __c)
+{
+  char _1;
+  int _2;
+  int (*) () * _3;
+  int (*) () _5;
+  char_type _6;
+  char_type _13;
+  char_type _15;
+
+  <bb 2> :
+  _1 = this_9(D)->_M_widen_ok;
+  if (_1 != 0)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  _2 = (int) __c_11(D);
+  _15 = this_9(D)->_M_widen[_2];
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 5>; [INV]
+
+  <bb 4> :
+  std::ctype<char>::_M_widen_init (this_9(D));
+  _3 = this_9(D)->D.39781._vptr.facet;
+  _5 = MEM[(int (*) () *)_3 + 48B];
+  _13 = OBJ_TYPE_REF(_5;(const struct ctype)this_9(D)->6) (this_9(D), __c_11(D));
+
+  <bb 5> :
+  # _6 = PHI <_15(3), _13(4)>
+  return _6;
+
+}
+
+
+
+;; Function std::ctype<char>::do_widen (_ZNKSt5ctypeIcE8do_widenEc, funcdef_no=1529, decl_uid=39715, cgraph_uid=500, symbol_order=529)
+
+modref analyzing 'std::ctype<char>::do_widen' (ipa=0)
+Analyzing flags of ssa name: __c_1(D)
+  Analyzing stmt: return __c_1(D);
+  current flags of __c_1(D) direct noclobber noescape nodirectescape
+flags of ssa name __c_1(D) direct noclobber noescape nodirectescape
+ - modref done with result: tracked.
+  loads:
+    Limits: 32 bases, 16 refs
+  stores:
+    Limits: 32 bases, 16 refs
+  parm 0 flags: unused
+  parm 1 flags: direct noclobber noescape nodirectescape
+char_type std::ctype<char>::do_widen (const struct ctype * const this, char __c)
+{
+  <bb 2> :
+  return __c_1(D);
+
+}
+
+
+
+;; Function main (main, funcdef_no=1776, decl_uid=46757, cgraph_uid=510, symbol_order=540)
+
+modref analyzing 'main' (ipa=0)
+ - Function availability <= AVAIL_INTERPOSABLE.
+ - Analyzing load: n
+   - Read-only or local, ignoring.
+ - Function availability <= AVAIL_INTERPOSABLE.
+ - May be interposed: collapsing loads.
+ - Merging side effects of std::basic_ostream<_CharT, _Traits>::__ostream_type& std::basic_ostream<_CharT, _Traits>::operator<<(std::basic_ostream<_CharT, _Traits>::__ostream_type& (*)(std::basic_ostream<_CharT, _Traits>::__ostream_type&)) [with _CharT = char; _Traits = std::char_traits<char>]/805 with parm map: -1 -1
+ - Analyzing store: n
+   - Read-only or local, ignoring.
+ - Analyzing store: n
+   - Read-only or local, ignoring.
+ - modref done with result: tracked.
+int main ()
+{
+  int f;
+  int n;
+  int i;
+  int n.0_1;
+  struct basic_ostream & _11;
+
+  <bb 2> :
+  std::basic_istream<char>::operator>> (&cin, &n);
+
+  <bb 9> :
+  goto <bb 4>; [100.00%]
+
+  <bb 3> :
+  f_15 = i_3 * f_4;
+  i_16 = i_3 + 1;
+
+  <bb 4> :
+  # i_3 = PHI <2(9), i_16(3)>
+  # f_4 = PHI <1(9), f_15(3)>
+  n.0_1 = n;
+  if (n.0_1 >= i_3)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  # f_8 = PHI <f_4(4)>
+  _11 = std::basic_ostream<char>::operator<< (&cout, f_8);
+
+  <bb 6> :
+  std::basic_ostream<char>::operator<< (_11, endl);
+
+  <bb 7> :
+  n ={v} {CLOBBER};
+  return 0;
+
+  <bb 8> :
+<L5>:
+  n ={v} {CLOBBER};
+  resx 1
+
+}
+
+
+
+;; Function std::__check_facet<std::ctype<char> > (_ZSt13__check_facetISt5ctypeIcEERKT_PS3_, funcdef_no=2152, decl_uid=49954, cgraph_uid=886, symbol_order=919)
+
+modref analyzing 'std::__check_facet<std::ctype<char> >' (ipa=0)
+Analyzing flags of ssa name: __f_1(D)
+  Analyzing stmt: return __f_1(D);
+  current flags of __f_1(D) direct noclobber noescape nodirectescape
+  Analyzing stmt: if (__f_1(D) == 0B)
+  current flags of __f_1(D) direct noclobber noescape nodirectescape
+flags of ssa name __f_1(D) direct noclobber noescape nodirectescape
+ - Function availability <= AVAIL_INTERPOSABLE.
+ - modref done with result: tracked.
+  loads:
+    Limits: 32 bases, 16 refs
+    Every base
+  stores:
+    Limits: 32 bases, 16 refs
+    Every base
+  parm 0 flags: direct noclobber noescape nodirectescape
+const struct ctype & std::__check_facet<std::ctype<char> > (const struct ctype * __f)
+{
+  <bb 2> :
+  if (__f_1(D) == 0B)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 4>; [INV]
+
+  <bb 3> :
+  std::__throw_bad_cast ();
+
+  <bb 4> :
+  return __f_1(D);
+
+}
+
+
+
+;; Function std::basic_ios<char>::widen (_ZNKSt9basic_iosIcSt11char_traitsIcEE5widenEc, funcdef_no=2116, decl_uid=43229, cgraph_uid=850, symbol_order=883)
+
+modref analyzing 'std::basic_ios<char>::widen' (ipa=0)
+Analyzing flags of ssa name: this_4(D)
+  Analyzing stmt: _1 = this_4(D)->_M_ctype;
+    Analyzing flags of ssa name: _1
+      Analyzing stmt: _6 = std::__check_facet<std::ctype<char> > (_1);
+        Analyzing flags of ssa name: _6
+          Analyzing stmt: _9 = std::ctype<char>::widen (_6, __c_7(D));
+            Analyzing flags of ssa name: _9
+              Analyzing stmt: return _9;
+              current flags of _9 direct noclobber noescape nodirectescape
+            flags of ssa name _9 direct noclobber noescape nodirectescape
+          current flags of _6
+        flags of ssa name _6
+      current flags of _1
+    flags of ssa name _1
+  current flags of this_4(D) nodirectescape
+flags of ssa name this_4(D) nodirectescape
+Analyzing flags of ssa name: __c_7(D)
+  Analyzing stmt: _9 = std::ctype<char>::widen (_6, __c_7(D));
+  current flags of __c_7(D)
+flags of ssa name __c_7(D)
+ - Analyzing load: this_4(D)->_M_ctype
+   - Recording base_set=7 ref_set=6 parm=0
+ - May be interposed: collapsing loads.
+ - Merging side effects of const _Facet& std::__check_facet(const _Facet*) [with _Facet = std::ctype<char>]/919 with parm map: -1
+ - No modref summary available for callee.
+ - modref done with result: tracked.
+  loads:
+    Limits: 32 bases, 16 refs
+    Every base
+  stores:
+    Limits: 32 bases, 16 refs
+    Every base
+  parm 0 flags: nodirectescape
+char_type std::basic_ios<char>::widen (const struct basic_ios * const this, char __c)
+{
+  const struct __ctype_type * _1;
+  const struct ctype & _6;
+  char_type _9;
+
+  <bb 2> :
+  _1 = this_4(D)->_M_ctype;
+  _6 = std::__check_facet<std::ctype<char> > (_1);
+  _9 = std::ctype<char>::widen (_6, __c_7(D));
+  return _9;
+
+}
+
+
+
+;; Function std::endl<char, std::char_traits<char> > (_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_, funcdef_no=2037, decl_uid=44183, cgraph_uid=771, symbol_order=804)
+
+modref analyzing 'std::endl<char, std::char_traits<char> >' (ipa=0)
+Analyzing flags of ssa name: __os_9(D)
+  Analyzing stmt: _13 = std::basic_ostream<char>::put (__os_9(D), _11);
+    Analyzing flags of ssa name: _13
+      Analyzing stmt: _15 = std::flush<char, std::char_traits<char> > (_13);
+        Analyzing flags of ssa name: _15
+          Analyzing stmt: return _15;
+          current flags of _15 direct noclobber noescape nodirectescape
+        flags of ssa name _15 direct noclobber noescape nodirectescape
+      current flags of _13
+    flags of ssa name _13
+  current flags of __os_9(D)
+flags of ssa name __os_9(D)
+ - Analyzing load: __os_9(D)->_vptr.basic_ostream
+   - Recording base_set=23 ref_set=2 parm=0
+ - Analyzing load: MEM[(long int *)_1 + -24B]
+   - Recording base_set=9 ref_set=9 parm=-1
+ - May be interposed: collapsing loads.
+ - Merging side effects of std::basic_ios<_CharT, _Traits>::char_type std::basic_ios<_CharT, _Traits>::widen(char) const [with _CharT = char; _Traits = std::char_traits<char>]/883 with parm map: 0 -1
+ - modref done with result: tracked.
+struct basic_ostream & std::endl<char, std::char_traits<char> > (struct basic_ostream & __os)
+{
+  int (*) () * _1;
+  long int _3;
+  sizetype _4;
+  struct basic_ios * _5;
+  char _11;
+  struct basic_ostream & _13;
+  struct basic_ostream & _15;
+
+  <bb 2> :
+  _1 = __os_9(D)->_vptr.basic_ostream;
+  _3 = MEM[(long int *)_1 + -24B];
+  _4 = (sizetype) _3;
+  _5 = __os_9(D) + _4;
+  _11 = std::basic_ios<char>::widen (_5, 10);
+  _13 = std::basic_ostream<char>::put (__os_9(D), _11);
+  _15 = std::flush<char, std::char_traits<char> > (_13);
+  return _15;
+
+}
+
+
+
+;; Function _GLOBAL__sub_I_main (_GLOBAL__sub_I_main, funcdef_no=2277, decl_uid=51661, cgraph_uid=1011, symbol_order=1186)
+
+modref analyzing '_GLOBAL__sub_I_main' (ipa=0)
+ - Merging side effects of void __static_initialization_and_destruction_0(int, int)/1067 with parm map: -1 -1
+ - modref done with result: tracked.
+void _GLOBAL__sub_I_main ()
+{
+  <bb 2> :
+  __static_initialization_and_destruction_0 (1, 65535);
+  return;
+
+}
+
+

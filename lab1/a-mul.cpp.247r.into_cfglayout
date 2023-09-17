@@ -1,0 +1,379 @@
+
+;; Function __static_initialization_and_destruction_0.constprop (_Z41__static_initialization_and_destruction_0ii.constprop.0, funcdef_no=2278, decl_uid=51721, cgraph_uid=1022, symbol_order=1200) (executed once)
+
+
+
+try_optimize_cfg iteration 1
+
+(note 3 0 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(insn 5 2 6 2 (set (reg:DI 93)
+        (high:DI (symbol_ref:DI ("*.LANCHOR0") [flags 0x182]))) "/usr/include/c++/11/iostream":74:25 53 {*movdi_aarch64}
+     (nil))
+(insn 6 5 7 2 (set (reg/f:DI 92)
+        (lo_sum:DI (reg:DI 93)
+            (symbol_ref:DI ("*.LANCHOR0") [flags 0x182]))) "/usr/include/c++/11/iostream":74:25 1014 {add_losym_di}
+     (expr_list:REG_EQUAL (symbol_ref:DI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 7 6 8 2 (set (reg:DI 0 x0)
+        (reg/f:DI 92)) "/usr/include/c++/11/iostream":74:25 53 {*movdi_aarch64}
+     (nil))
+(call_insn 8 7 9 2 (parallel [
+            (call (mem:DI (symbol_ref:DI ("_ZNSt8ios_base4InitC1Ev") [flags 0x41]  <function_decl 0xffffa23fbb00 __ct_comp >) [0 __ct_comp  S8 A8])
+                (const_int 0 [0]))
+            (unspec:DI [
+                    (const_int 0 [0])
+                ] UNSPEC_CALLEE_ABI)
+            (clobber (reg:DI 30 x30))
+        ]) "/usr/include/c++/11/iostream":74:25 46 {*call_insn}
+     (expr_list:REG_CALL_DECL (symbol_ref:DI ("_ZNSt8ios_base4InitC1Ev") [flags 0x41]  <function_decl 0xffffa23fbb00 __ct_comp >)
+        (nil))
+    (expr_list (clobber (reg:DI 17 x17))
+        (expr_list (clobber (reg:DI 16 x16))
+            (expr_list:DI (use (reg:DI 0 x0))
+                (nil)))))
+(insn 9 8 10 2 (set (reg:DI 95)
+        (high:DI (symbol_ref:DI ("__dso_handle") [flags 0xc2]  <var_decl 0xffffa1645120 __dso_handle>))) "/usr/include/c++/11/iostream":74:25 53 {*movdi_aarch64}
+     (nil))
+(insn 10 9 11 2 (set (reg:DI 94)
+        (lo_sum:DI (reg:DI 95)
+            (symbol_ref:DI ("__dso_handle") [flags 0xc2]  <var_decl 0xffffa1645120 __dso_handle>))) "/usr/include/c++/11/iostream":74:25 1014 {add_losym_di}
+     (expr_list:REG_EQUAL (symbol_ref:DI ("__dso_handle") [flags 0xc2]  <var_decl 0xffffa1645120 __dso_handle>)
+        (nil)))
+(insn 11 10 12 2 (set (reg:DI 97)
+        (high:DI (symbol_ref:DI ("*.LANCHOR0") [flags 0x182]))) "/usr/include/c++/11/iostream":74:25 53 {*movdi_aarch64}
+     (nil))
+(insn 12 11 13 2 (set (reg/f:DI 96)
+        (lo_sum:DI (reg:DI 97)
+            (symbol_ref:DI ("*.LANCHOR0") [flags 0x182]))) "/usr/include/c++/11/iostream":74:25 1014 {add_losym_di}
+     (expr_list:REG_EQUAL (symbol_ref:DI ("*.LANCHOR0") [flags 0x182])
+        (nil)))
+(insn 13 12 14 2 (set (reg:DI 99)
+        (high:DI (symbol_ref:DI ("_ZNSt8ios_base4InitD1Ev") [flags 0x41]  <function_decl 0xffffa23fbd00 __dt_comp >))) "/usr/include/c++/11/iostream":74:25 53 {*movdi_aarch64}
+     (nil))
+(insn 14 13 15 2 (set (reg:DI 98)
+        (unspec:DI [
+                (mem/u/c:DI (lo_sum:DI (reg:DI 99)
+                        (symbol_ref:DI ("_ZNSt8ios_base4InitD1Ev") [flags 0x41]  <function_decl 0xffffa23fbd00 __dt_comp >)) [0  S8 A8])
+            ] UNSPEC_GOTSMALLPIC)) "/usr/include/c++/11/iostream":74:25 1016 {ldr_got_small_di}
+     (expr_list:REG_EQUAL (symbol_ref:DI ("_ZNSt8ios_base4InitD1Ev") [flags 0x41]  <function_decl 0xffffa23fbd00 __dt_comp >)
+        (nil)))
+(insn 15 14 16 2 (set (reg:DI 2 x2)
+        (reg:DI 94)) "/usr/include/c++/11/iostream":74:25 53 {*movdi_aarch64}
+     (nil))
+(insn 16 15 17 2 (set (reg:DI 1 x1)
+        (reg/f:DI 96)) "/usr/include/c++/11/iostream":74:25 53 {*movdi_aarch64}
+     (nil))
+(insn 17 16 18 2 (set (reg:DI 0 x0)
+        (reg:DI 98)) "/usr/include/c++/11/iostream":74:25 53 {*movdi_aarch64}
+     (nil))
+(call_insn/j 18 17 0 2 (parallel [
+            (set (reg:SI 0 x0)
+                (call (mem:DI (symbol_ref:DI ("__cxa_atexit") [flags 0x41]  <function_decl 0xffffa164f200 __cxa_atexit>) [0 __cxa_atexit S8 A8])
+                    (const_int 0 [0])))
+            (unspec:DI [
+                    (const_int 0 [0])
+                ] UNSPEC_CALLEE_ABI)
+            (return)
+        ]) "/usr/include/c++/11/iostream":74:25 49 {*sibcall_value_insn}
+     (expr_list:REG_CALL_DECL (symbol_ref:DI ("__cxa_atexit") [flags 0x41]  <function_decl 0xffffa164f200 __cxa_atexit>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list (clobber (reg:DI 17 x17))
+        (expr_list (clobber (reg:DI 16 x16))
+            (expr_list:DI (use (reg:DI 0 x0))
+                (expr_list:DI (use (reg:DI 1 x1))
+                    (expr_list:DI (use (reg:DI 2 x2))
+                        (nil)))))))
+
+;; Function main (main, funcdef_no=1776, decl_uid=46757, cgraph_uid=510, symbol_order=540) (executed once)
+
+
+
+try_optimize_cfg iteration 1
+
+Redirecting fallthru edge 4->5 to 7
+deleting block 5
+
+
+try_optimize_cfg iteration 2
+
+
+
+try_optimize_cfg iteration 1
+
+(note 9 0 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 9 3 2 NOTE_INSN_FUNCTION_BEG)
+(insn 3 2 4 2 (set (reg:DI 101)
+        (high:DI (const:DI (unspec:DI [
+                        (symbol_ref:DI ("__stack_chk_guard") [flags 0xc0]  <var_decl 0xffffa16a1ab0 __stack_chk_guard>)
+                        (const_int 0 [0])
+                    ] UNSPEC_SALT_ADDR)))) "mul.cpp":4:1 53 {*movdi_aarch64}
+     (nil))
+(insn 4 3 5 2 (set (reg:DI 100)
+        (unspec:DI [
+                (mem/u/c:DI (lo_sum:DI (reg:DI 101)
+                        (const:DI (unspec:DI [
+                                    (symbol_ref:DI ("__stack_chk_guard") [flags 0xc0]  <var_decl 0xffffa16a1ab0 __stack_chk_guard>)
+                                    (const_int 0 [0])
+                                ] UNSPEC_SALT_ADDR))) [0  S8 A8])
+            ] UNSPEC_GOTSMALLPIC)) "mul.cpp":4:1 1016 {ldr_got_small_di}
+     (expr_list:REG_EQUAL (const:DI (unspec:DI [
+                    (symbol_ref:DI ("__stack_chk_guard") [flags 0xc0]  <var_decl 0xffffa16a1ab0 __stack_chk_guard>)
+                    (const_int 0 [0])
+                ] UNSPEC_SALT_ADDR))
+        (nil)))
+(insn 5 4 11 2 (parallel [
+            (set (mem/v/f/c:DI (plus:DI (reg/f:DI 64 sfp)
+                        (const_int -8 [0xfffffffffffffff8])) [14 D.51738+0 S8 A64])
+                (unspec:DI [
+                        (mem:DI (reg:DI 100) [0  S8 A8])
+                    ] UNSPEC_SP_SET))
+            (set (scratch:DI)
+                (const_int 0 [0]))
+        ]) "mul.cpp":4:1 1063 {stack_protect_set_di}
+     (nil))
+(insn 11 5 12 2 (set (reg:DI 102)
+        (plus:DI (reg/f:DI 64 sfp)
+            (const_int -12 [0xfffffffffffffff4]))) "mul.cpp":6:10 121 {*adddi3_aarch64}
+     (nil))
+(insn 12 11 13 2 (set (reg:DI 104)
+        (high:DI (symbol_ref:DI ("_ZSt3cin") [flags 0xc0]  <var_decl 0xffffa1de6090 cin>))) "mul.cpp":6:10 53 {*movdi_aarch64}
+     (nil))
+(insn 13 12 14 2 (set (reg:DI 103)
+        (unspec:DI [
+                (mem/u/c:DI (lo_sum:DI (reg:DI 104)
+                        (symbol_ref:DI ("_ZSt3cin") [flags 0xc0]  <var_decl 0xffffa1de6090 cin>)) [0  S8 A8])
+            ] UNSPEC_GOTSMALLPIC)) "mul.cpp":6:10 1016 {ldr_got_small_di}
+     (expr_list:REG_EQUAL (symbol_ref:DI ("_ZSt3cin") [flags 0xc0]  <var_decl 0xffffa1de6090 cin>)
+        (nil)))
+(insn 14 13 15 2 (set (reg:DI 1 x1)
+        (reg:DI 102)) "mul.cpp":6:10 53 {*movdi_aarch64}
+     (nil))
+(insn 15 14 16 2 (set (reg:DI 0 x0)
+        (reg:DI 103)) "mul.cpp":6:10 53 {*movdi_aarch64}
+     (nil))
+(call_insn 16 15 17 2 (parallel [
+            (set (reg:DI 0 x0)
+                (call (mem:DI (symbol_ref:DI ("_ZNSirsERi") [flags 0x41]  <function_decl 0xffffa1cde700 operator>>>) [0 operator>> S8 A8])
+                    (const_int 0 [0])))
+            (unspec:DI [
+                    (const_int 0 [0])
+                ] UNSPEC_CALLEE_ABI)
+            (clobber (reg:DI 30 x30))
+        ]) "mul.cpp":6:10 47 {*call_value_insn}
+     (expr_list:REG_CALL_DECL (symbol_ref:DI ("_ZNSirsERi") [flags 0x41]  <function_decl 0xffffa1cde700 operator>>>)
+        (nil))
+    (expr_list (clobber (reg:DI 17 x17))
+        (expr_list (clobber (reg:DI 16 x16))
+            (expr_list:DI (use (reg:DI 0 x0))
+                (expr_list:DI (use (reg:DI 1 x1))
+                    (nil))))))
+(insn 17 16 20 2 (set (reg:SI 98 [ n.0_14 ])
+        (mem/c:SI (plus:DI (reg/f:DI 64 sfp)
+                (const_int -12 [0xfffffffffffffff4])) [5 n+0 S4 A32])) "mul.cpp":9:12 52 {*movsi_aarch64}
+     (nil))
+(insn 20 17 21 2 (set (reg:CC 66 cc)
+        (compare:CC (reg:SI 98 [ n.0_14 ])
+            (const_int 1 [0x1]))) "mul.cpp":9:12 403 {cmpsi}
+     (nil))
+(jump_insn 21 20 22 2 (set (pc)
+        (if_then_else (le (reg:CC 66 cc)
+                (const_int 0 [0]))
+            (label_ref:DI 61)
+            (pc))) "mul.cpp":9:12 15 {condjump}
+     (int_list:REG_BR_PROB 118111604 (nil))
+ -> 61)
+(note 22 21 23 3 [bb 3] NOTE_INSN_BASIC_BLOCK)
+(insn 23 22 6 3 (set (reg:SI 94 [ _6 ])
+        (plus:SI (reg:SI 98 [ n.0_14 ])
+            (const_int 1 [0x1]))) 120 {*addsi3_aarch64}
+     (nil))
+(insn 6 23 7 3 (set (reg/v:SI 96 [ f ])
+        (const_int 1 [0x1])) "mul.cpp":8:6 52 {*movsi_aarch64}
+     (nil))
+(insn 7 6 27 3 (set (reg/v:SI 97 [ i ])
+        (const_int 2 [0x2])) "mul.cpp":7:6 52 {*movsi_aarch64}
+     (nil))
+(code_label 27 7 24 4 6 (nil) [1 uses])
+(note 24 27 25 4 [bb 4] NOTE_INSN_BASIC_BLOCK)
+(insn 25 24 26 4 (set (reg/v:SI 96 [ f ])
+        (mult:SI (reg/v:SI 96 [ f ])
+            (reg/v:SI 97 [ i ]))) "mul.cpp":11:10 375 {mulsi3}
+     (nil))
+(insn 26 25 28 4 (set (reg/v:SI 97 [ i ])
+        (plus:SI (reg/v:SI 97 [ i ])
+            (const_int 1 [0x1]))) "mul.cpp":12:10 120 {*addsi3_aarch64}
+     (nil))
+(insn 28 26 29 4 (set (reg:CC 66 cc)
+        (compare:CC (reg:SI 94 [ _6 ])
+            (reg/v:SI 97 [ i ]))) "mul.cpp":9:12 403 {cmpsi}
+     (nil))
+(jump_insn 29 28 61 4 (set (pc)
+        (if_then_else (ne (reg:CC 66 cc)
+                (const_int 0 [0]))
+            (label_ref 27)
+            (pc))) "mul.cpp":9:12 15 {condjump}
+     (int_list:REG_BR_PROB 955630228 (nil))
+ -> 27)
+      ; pc falls through to BB 7
+(code_label 61 29 60 6 8 (nil) [1 uses])
+(note 60 61 8 6 [bb 6] NOTE_INSN_BASIC_BLOCK)
+(insn 8 60 30 6 (set (reg/v:SI 96 [ f ])
+        (const_int 1 [0x1])) "mul.cpp":8:6 52 {*movsi_aarch64}
+     (nil))
+(code_label 30 8 31 7 5 (nil) [0 uses])
+(note 31 30 32 7 [bb 7] NOTE_INSN_BASIC_BLOCK)
+(insn 32 31 33 7 (set (reg:DI 106)
+        (high:DI (symbol_ref:DI ("_ZSt4cout") [flags 0xc0]  <var_decl 0xffffa1de6120 cout>))) "mul.cpp":14:11 53 {*movdi_aarch64}
+     (nil))
+(insn 33 32 34 7 (set (reg:DI 105)
+        (unspec:DI [
+                (mem/u/c:DI (lo_sum:DI (reg:DI 106)
+                        (symbol_ref:DI ("_ZSt4cout") [flags 0xc0]  <var_decl 0xffffa1de6120 cout>)) [0  S8 A8])
+            ] UNSPEC_GOTSMALLPIC)) "mul.cpp":14:11 1016 {ldr_got_small_di}
+     (expr_list:REG_EQUAL (symbol_ref:DI ("_ZSt4cout") [flags 0xc0]  <var_decl 0xffffa1de6120 cout>)
+        (nil)))
+(insn 34 33 35 7 (set (reg:SI 1 x1)
+        (reg/v:SI 96 [ f ])) "mul.cpp":14:11 52 {*movsi_aarch64}
+     (nil))
+(insn 35 34 36 7 (set (reg:DI 0 x0)
+        (reg:DI 105)) "mul.cpp":14:11 53 {*movdi_aarch64}
+     (nil))
+(call_insn 36 35 37 7 (parallel [
+            (set (reg:DI 0 x0)
+                (call (mem:DI (symbol_ref:DI ("_ZNSolsEi") [flags 0x41]  <function_decl 0xffffa1c41700 operator<<>) [0 operator<< S8 A8])
+                    (const_int 0 [0])))
+            (unspec:DI [
+                    (const_int 0 [0])
+                ] UNSPEC_CALLEE_ABI)
+            (clobber (reg:DI 30 x30))
+        ]) "mul.cpp":14:11 47 {*call_value_insn}
+     (expr_list:REG_CALL_DECL (symbol_ref:DI ("_ZNSolsEi") [flags 0x41]  <function_decl 0xffffa1c41700 operator<<>)
+        (nil))
+    (expr_list (clobber (reg:DI 17 x17))
+        (expr_list (clobber (reg:DI 16 x16))
+            (expr_list:DI (use (reg:DI 0 x0))
+                (expr_list:SI (use (reg:SI 1 x1))
+                    (nil))))))
+(insn 37 36 38 7 (set (reg/f:DI 95 [ _8 ])
+        (reg:DI 0 x0)) "mul.cpp":14:11 53 {*movdi_aarch64}
+     (nil))
+(insn 38 37 39 7 (set (reg:DI 108)
+        (high:DI (symbol_ref:DI ("_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_") [flags 0x41]  <function_decl 0xffffa1c54800 endl>))) "mul.cpp":14:14 53 {*movdi_aarch64}
+     (nil))
+(insn 39 38 40 7 (set (reg:DI 107)
+        (unspec:DI [
+                (mem/u/c:DI (lo_sum:DI (reg:DI 108)
+                        (symbol_ref:DI ("_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_") [flags 0x41]  <function_decl 0xffffa1c54800 endl>)) [0  S8 A8])
+            ] UNSPEC_GOTSMALLPIC)) "mul.cpp":14:14 1016 {ldr_got_small_di}
+     (expr_list:REG_EQUAL (symbol_ref:DI ("_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_") [flags 0x41]  <function_decl 0xffffa1c54800 endl>)
+        (nil)))
+(insn 40 39 41 7 (set (reg:DI 1 x1)
+        (reg:DI 107)) "mul.cpp":14:14 53 {*movdi_aarch64}
+     (nil))
+(insn 41 40 42 7 (set (reg:DI 0 x0)
+        (reg/f:DI 95 [ _8 ])) "mul.cpp":14:14 53 {*movdi_aarch64}
+     (nil))
+(call_insn 42 41 43 7 (parallel [
+            (set (reg:DI 0 x0)
+                (call (mem:DI (symbol_ref:DI ("_ZNSolsEPFRSoS_E") [flags 0x41]  <function_decl 0xffffa1c01c00 operator<<>) [0 operator<< S8 A8])
+                    (const_int 0 [0])))
+            (unspec:DI [
+                    (const_int 0 [0])
+                ] UNSPEC_CALLEE_ABI)
+            (clobber (reg:DI 30 x30))
+        ]) "mul.cpp":14:14 47 {*call_value_insn}
+     (expr_list:REG_CALL_DECL (symbol_ref:DI ("_ZNSolsEPFRSoS_E") [flags 0x41]  <function_decl 0xffffa1c01c00 operator<<>)
+        (nil))
+    (expr_list (clobber (reg:DI 17 x17))
+        (expr_list (clobber (reg:DI 16 x16))
+            (expr_list:DI (use (reg:DI 0 x0))
+                (expr_list:DI (use (reg:DI 1 x1))
+                    (nil))))))
+(insn 43 42 47 7 (set (reg:SI 99 [ <retval> ])
+        (const_int 0 [0])) "mul.cpp":16:1 52 {*movsi_aarch64}
+     (nil))
+(insn 47 43 48 7 (set (reg:DI 111)
+        (high:DI (const:DI (unspec:DI [
+                        (symbol_ref:DI ("__stack_chk_guard") [flags 0xc0]  <var_decl 0xffffa16a1ab0 __stack_chk_guard>)
+                        (const_int 1 [0x1])
+                    ] UNSPEC_SALT_ADDR)))) "mul.cpp":16:1 53 {*movdi_aarch64}
+     (nil))
+(insn 48 47 49 7 (set (reg:DI 110)
+        (unspec:DI [
+                (mem/u/c:DI (lo_sum:DI (reg:DI 111)
+                        (const:DI (unspec:DI [
+                                    (symbol_ref:DI ("__stack_chk_guard") [flags 0xc0]  <var_decl 0xffffa16a1ab0 __stack_chk_guard>)
+                                    (const_int 1 [0x1])
+                                ] UNSPEC_SALT_ADDR))) [0  S8 A8])
+            ] UNSPEC_GOTSMALLPIC)) "mul.cpp":16:1 1016 {ldr_got_small_di}
+     (expr_list:REG_EQUAL (const:DI (unspec:DI [
+                    (symbol_ref:DI ("__stack_chk_guard") [flags 0xc0]  <var_decl 0xffffa16a1ab0 __stack_chk_guard>)
+                    (const_int 1 [0x1])
+                ] UNSPEC_SALT_ADDR))
+        (nil)))
+(insn 49 48 50 7 (parallel [
+            (set (reg:CC 66 cc)
+                (unspec:CC [
+                        (mem/v/f/c:DI (plus:DI (reg/f:DI 64 sfp)
+                                (const_int -8 [0xfffffffffffffff8])) [14 D.51738+0 S8 A64])
+                        (mem:DI (reg:DI 110) [0  S8 A8])
+                    ] UNSPEC_SP_TEST))
+            (clobber (scratch:DI))
+            (clobber (scratch:DI))
+        ]) "mul.cpp":16:1 1065 {stack_protect_test_di}
+     (nil))
+(jump_insn 50 49 62 7 (set (pc)
+        (if_then_else (eq (reg:CC 66 cc)
+                (const_int 0 [0]))
+            (label_ref 53)
+            (pc))) "mul.cpp":16:1 15 {condjump}
+     (int_list:REG_BR_PROB 1073312332 (nil))
+ -> 53)
+(note 62 50 51 8 [bb 8] NOTE_INSN_BASIC_BLOCK)
+(call_insn 51 62 53 8 (parallel [
+            (call (mem:DI (symbol_ref:DI ("__stack_chk_fail") [flags 0x41]  <function_decl 0xffffa16ca000 __stack_chk_fail>) [0 __stack_chk_fail S8 A8])
+                (const_int 0 [0]))
+            (unspec:DI [
+                    (const_int 0 [0])
+                ] UNSPEC_CALLEE_ABI)
+            (clobber (reg:DI 30 x30))
+        ]) "mul.cpp":16:1 46 {*call_insn}
+     (expr_list:REG_CALL_DECL (symbol_ref:DI ("__stack_chk_fail") [flags 0x41]  <function_decl 0xffffa16ca000 __stack_chk_fail>)
+        (expr_list:REG_NORETURN (const_int 0 [0])
+            (expr_list:REG_EH_REGION (const_int 0 [0])
+                (nil))))
+    (expr_list (clobber (reg:DI 17 x17))
+        (expr_list (clobber (reg:DI 16 x16))
+            (nil))))
+(code_label 53 51 63 9 7 (nil) [1 uses])
+(note 63 53 54 9 [bb 9] NOTE_INSN_BASIC_BLOCK)
+(insn 54 63 55 9 (set (reg/i:SI 0 x0)
+        (reg:SI 99 [ <retval> ])) "mul.cpp":16:1 52 {*movsi_aarch64}
+     (nil))
+(insn 55 54 0 9 (use (reg/i:SI 0 x0)) "mul.cpp":16:1 -1
+     (nil))
+
+;; Function _GLOBAL__sub_I_main (_GLOBAL__sub_I_main, funcdef_no=2277, decl_uid=51661, cgraph_uid=1011, symbol_order=1186) (executed once)
+
+
+
+try_optimize_cfg iteration 1
+
+(note 3 0 2 2 [bb 2] NOTE_INSN_BASIC_BLOCK)
+(note 2 3 5 2 NOTE_INSN_FUNCTION_BEG)
+(call_insn/j 5 2 0 2 (parallel [
+            (call (mem:DI (symbol_ref:DI ("_Z41__static_initialization_and_destruction_0ii.constprop.0") [flags 0x3]  <function_decl 0xffffa16a3500 __static_initialization_and_destruction_0.constprop>) [0 __static_initialization_and_destruction_0.constprop S8 A8])
+                (const_int 0 [0]))
+            (unspec:DI [
+                    (const_int 0 [0])
+                ] UNSPEC_CALLEE_ABI)
+            (return)
+        ]) "mul.cpp":16:1 48 {*sibcall_insn}
+     (expr_list:REG_CALL_DECL (symbol_ref:DI ("_Z41__static_initialization_and_destruction_0ii.constprop.0") [flags 0x3]  <function_decl 0xffffa16a3500 __static_initialization_and_destruction_0.constprop>)
+        (expr_list:REG_EH_REGION (const_int 0 [0])
+            (nil)))
+    (expr_list (clobber (reg:DI 17 x17))
+        (expr_list (clobber (reg:DI 16 x16))
+            (nil))))

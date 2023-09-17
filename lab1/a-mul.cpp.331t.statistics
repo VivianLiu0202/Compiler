@@ -1,0 +1,227 @@
+31 ssa "unused VAR_DECLs removed" "std::flush<char, std::char_traits<char> >" 2
+31 ssa "unused VAR_DECLs removed" "__static_initialization_and_destruction_0" 2
+31 ssa "unused VAR_DECLs removed" "std::ctype<char>::do_widen" 2
+31 ssa "unused VAR_DECLs removed" "main" 1
+31 ssa "unused VAR_DECLs removed" "std::__check_facet<std::ctype<char> >" 2
+31 ssa "unused VAR_DECLs removed" "std::basic_ios<char>::widen" 1
+31 ssa "unused VAR_DECLs removed" "std::endl<char, std::char_traits<char> >" 3
+31 ssa "unused VAR_DECLs removed" "_GLOBAL__sub_I_main" 4
+40 ccp "Copies propagated" "std::basic_ostream<char>::operator<<" 2
+40 ccp "Statements deleted" "std::basic_ostream<char>::operator<<" 2
+45 fre "RPO blocks" "std::basic_ostream<char>::operator<<" 1
+45 fre "RPO iterations == 10" "std::basic_ostream<char>::operator<<" 1
+45 fre "RPO blocks visited" "std::basic_ostream<char>::operator<<" 1
+45 fre "RPO blocks executable" "std::basic_ostream<char>::operator<<" 1
+45 fre "RPO block visited times == 1" "std::basic_ostream<char>::operator<<" 1
+45 fre "RPO num avail == 1" "std::basic_ostream<char>::operator<<" 1
+45 fre "RPO num values == 3" "std::basic_ostream<char>::operator<<" 1
+45 fre "RPO num lattice == 3" "std::basic_ostream<char>::operator<<" 1
+59 release_ssa "SSA names released" "std::basic_ostream<char>::operator<<" 2
+59 release_ssa "SSA name holes removed" "std::basic_ostream<char>::operator<<" 2
+40 ccp "Copies propagated" "std::flush<char, std::char_traits<char> >" 1
+40 ccp "Statements deleted" "std::flush<char, std::char_traits<char> >" 1
+45 fre "RPO num values == 2" "std::flush<char, std::char_traits<char> >" 1
+45 fre "RPO blocks" "std::flush<char, std::char_traits<char> >" 1
+45 fre "RPO iterations == 10" "std::flush<char, std::char_traits<char> >" 1
+45 fre "RPO num lattice == 2" "std::flush<char, std::char_traits<char> >" 1
+45 fre "RPO blocks visited" "std::flush<char, std::char_traits<char> >" 1
+45 fre "RPO blocks executable" "std::flush<char, std::char_traits<char> >" 1
+45 fre "RPO block visited times == 1" "std::flush<char, std::char_traits<char> >" 1
+45 fre "RPO num avail == 1" "std::flush<char, std::char_traits<char> >" 1
+59 release_ssa "SSA names released" "std::flush<char, std::char_traits<char> >" 1
+59 release_ssa "SSA name holes removed" "std::flush<char, std::char_traits<char> >" 1
+45 fre "RPO blocks" "__static_initialization_and_destruction_0" 4
+45 fre "RPO iterations == 10" "__static_initialization_and_destruction_0" 1
+45 fre "RPO blocks visited" "__static_initialization_and_destruction_0" 4
+45 fre "RPO blocks executable" "__static_initialization_and_destruction_0" 4
+45 fre "RPO block visited times == 1" "__static_initialization_and_destruction_0" 4
+45 fre "RPO num avail == 0" "__static_initialization_and_destruction_0" 1
+45 fre "RPO num lattice == 5" "__static_initialization_and_destruction_0" 1
+45 fre "RPO num values == 5" "__static_initialization_and_destruction_0" 1
+40 ccp "Copies propagated" "std::ctype<char>::widen" 1
+40 ccp "Statements deleted" "std::ctype<char>::widen" 1
+45 fre "RPO blocks" "std::ctype<char>::widen" 4
+45 fre "RPO num lattice == 12" "std::ctype<char>::widen" 1
+45 fre "RPO iterations == 10" "std::ctype<char>::widen" 1
+45 fre "RPO blocks visited" "std::ctype<char>::widen" 4
+45 fre "RPO num values == 12" "std::ctype<char>::widen" 1
+45 fre "RPO blocks executable" "std::ctype<char>::widen" 4
+45 fre "RPO block visited times == 1" "std::ctype<char>::widen" 4
+45 fre "RPO num avail == 7" "std::ctype<char>::widen" 1
+59 release_ssa "SSA names released" "std::ctype<char>::widen" 2
+59 release_ssa "SSA name holes removed" "std::ctype<char>::widen" 2
+40 ccp "Copies propagated" "std::ctype<char>::do_widen" 1
+40 ccp "Statements deleted" "std::ctype<char>::do_widen" 1
+45 fre "RPO blocks" "std::ctype<char>::do_widen" 1
+45 fre "RPO iterations == 10" "std::ctype<char>::do_widen" 1
+45 fre "RPO blocks visited" "std::ctype<char>::do_widen" 1
+45 fre "RPO num lattice == 0" "std::ctype<char>::do_widen" 1
+45 fre "RPO blocks executable" "std::ctype<char>::do_widen" 1
+45 fre "RPO block visited times == 1" "std::ctype<char>::do_widen" 1
+45 fre "RPO num avail == 0" "std::ctype<char>::do_widen" 1
+45 fre "RPO num values == 0" "std::ctype<char>::do_widen" 1
+59 release_ssa "SSA names released" "std::ctype<char>::do_widen" 1
+59 release_ssa "SSA name holes removed" "std::ctype<char>::do_widen" 1
+40 ccp "Copies propagated" "main" 1
+40 ccp "Statements deleted" "main" 4
+40 ccp "Constants propagated" "main" 1
+45 fre "RPO blocks" "main" 7
+45 fre "RPO num lattice == 12" "main" 1
+45 fre "RPO blocks visited" "main" 9
+45 fre "RPO iterations == 12" "main" 1
+45 fre "RPO num values == 12" "main" 1
+45 fre "RPO num avail == 6" "main" 1
+45 fre "RPO blocks executable" "main" 7
+45 fre "RPO block visited times == 1" "main" 5
+45 fre "RPO block visited times == 2" "main" 2
+46 evrp "Incremental SSA update" "main" 1
+59 release_ssa "SSA names released" "main" 5
+59 release_ssa "SSA name holes removed" "main" 5
+40 ccp "Copies propagated" "std::__check_facet<std::ctype<char> >" 1
+40 ccp "Statements deleted" "std::__check_facet<std::ctype<char> >" 1
+45 fre "RPO num values == 2" "std::__check_facet<std::ctype<char> >" 1
+45 fre "RPO blocks" "std::__check_facet<std::ctype<char> >" 3
+45 fre "RPO iterations == 10" "std::__check_facet<std::ctype<char> >" 1
+45 fre "RPO num lattice == 2" "std::__check_facet<std::ctype<char> >" 1
+45 fre "RPO blocks visited" "std::__check_facet<std::ctype<char> >" 3
+45 fre "RPO blocks executable" "std::__check_facet<std::ctype<char> >" 3
+45 fre "RPO block visited times == 1" "std::__check_facet<std::ctype<char> >" 3
+45 fre "RPO num avail == 0" "std::__check_facet<std::ctype<char> >" 1
+59 release_ssa "SSA names released" "std::__check_facet<std::ctype<char> >" 1
+59 release_ssa "SSA name holes removed" "std::__check_facet<std::ctype<char> >" 1
+40 ccp "Copies propagated" "std::basic_ios<char>::widen" 2
+40 ccp "Statements deleted" "std::basic_ios<char>::widen" 2
+45 fre "RPO blocks" "std::basic_ios<char>::widen" 1
+45 fre "RPO iterations == 10" "std::basic_ios<char>::widen" 1
+45 fre "RPO num values == 6" "std::basic_ios<char>::widen" 1
+45 fre "RPO blocks visited" "std::basic_ios<char>::widen" 1
+45 fre "RPO num lattice == 6" "std::basic_ios<char>::widen" 1
+45 fre "RPO num avail == 3" "std::basic_ios<char>::widen" 1
+45 fre "RPO blocks executable" "std::basic_ios<char>::widen" 1
+45 fre "RPO block visited times == 1" "std::basic_ios<char>::widen" 1
+59 release_ssa "SSA names released" "std::basic_ios<char>::widen" 2
+59 release_ssa "SSA name holes removed" "std::basic_ios<char>::widen" 2
+40 ccp "Copies propagated" "std::endl<char, std::char_traits<char> >" 3
+40 ccp "Statements deleted" "std::endl<char, std::char_traits<char> >" 3
+45 fre "RPO num values == 11" "std::endl<char, std::char_traits<char> >" 1
+45 fre "RPO num lattice == 11" "std::endl<char, std::char_traits<char> >" 1
+45 fre "RPO block visited times == 1" "std::endl<char, std::char_traits<char> >" 1
+45 fre "RPO num avail == 7" "std::endl<char, std::char_traits<char> >" 1
+45 fre "RPO blocks visited" "std::endl<char, std::char_traits<char> >" 1
+45 fre "RPO blocks" "std::endl<char, std::char_traits<char> >" 1
+45 fre "RPO blocks executable" "std::endl<char, std::char_traits<char> >" 1
+45 fre "RPO iterations == 10" "std::endl<char, std::char_traits<char> >" 1
+59 release_ssa "SSA names released" "std::endl<char, std::char_traits<char> >" 4
+59 release_ssa "SSA name holes removed" "std::endl<char, std::char_traits<char> >" 4
+45 fre "RPO num avail == 0" "_GLOBAL__sub_I_main" 1
+45 fre "RPO block visited times == 1" "_GLOBAL__sub_I_main" 1
+45 fre "RPO blocks visited" "_GLOBAL__sub_I_main" 1
+45 fre "RPO blocks" "_GLOBAL__sub_I_main" 1
+45 fre "RPO blocks executable" "_GLOBAL__sub_I_main" 1
+45 fre "RPO num lattice == 1" "_GLOBAL__sub_I_main" 1
+45 fre "RPO num values == 1" "_GLOBAL__sub_I_main" 1
+45 fre "RPO iterations == 10" "_GLOBAL__sub_I_main" 1
+106 ccp "Statements folded" "__static_initialization_and_destruction_0.constprop" 2
+115 fre "RPO num values == 2" "__static_initialization_and_destruction_0.constprop" 1
+115 fre "RPO blocks" "__static_initialization_and_destruction_0.constprop" 1
+115 fre "RPO iterations == 10" "__static_initialization_and_destruction_0.constprop" 1
+115 fre "RPO blocks visited" "__static_initialization_and_destruction_0.constprop" 1
+115 fre "RPO blocks executable" "__static_initialization_and_destruction_0.constprop" 1
+115 fre "RPO block visited times == 1" "__static_initialization_and_destruction_0.constprop" 1
+115 fre "RPO num avail == 0" "__static_initialization_and_destruction_0.constprop" 1
+115 fre "RPO num lattice == 2" "__static_initialization_and_destruction_0.constprop" 1
+146 pre "RPO num values == 2" "__static_initialization_and_destruction_0.constprop" 1
+146 pre "RPO blocks" "__static_initialization_and_destruction_0.constprop" 1
+146 pre "RPO iterations == 10" "__static_initialization_and_destruction_0.constprop" 1
+146 pre "compute_antic iterations == 2" "__static_initialization_and_destruction_0.constprop" 1
+146 pre "RPO blocks visited" "__static_initialization_and_destruction_0.constprop" 1
+146 pre "RPO blocks executable" "__static_initialization_and_destruction_0.constprop" 1
+146 pre "RPO block visited times == 1" "__static_initialization_and_destruction_0.constprop" 1
+146 pre "RPO num avail == 0" "__static_initialization_and_destruction_0.constprop" 1
+146 pre "RPO num lattice == 2" "__static_initialization_and_destruction_0.constprop" 1
+146 pre "insert iterations == 1" "__static_initialization_and_destruction_0.constprop" 1
+195 fre "RPO num values == 2" "__static_initialization_and_destruction_0.constprop" 1
+195 fre "RPO blocks" "__static_initialization_and_destruction_0.constprop" 1
+195 fre "RPO iterations == 10" "__static_initialization_and_destruction_0.constprop" 1
+195 fre "RPO blocks visited" "__static_initialization_and_destruction_0.constprop" 1
+195 fre "RPO blocks executable" "__static_initialization_and_destruction_0.constprop" 1
+195 fre "RPO block visited times == 1" "__static_initialization_and_destruction_0.constprop" 1
+195 fre "RPO num avail == 0" "__static_initialization_and_destruction_0.constprop" 1
+195 fre "RPO num lattice == 2" "__static_initialization_and_destruction_0.constprop" 1
+284 combine "two-insn combine" "__static_initialization_and_destruction_0.constprop" 2
+115 fre "RPO blocks" "main" 4
+115 fre "RPO num values == 10" "main" 1
+115 fre "RPO blocks visited" "main" 6
+115 fre "RPO iterations == 15" "main" 1
+115 fre "RPO num lattice == 10" "main" 1
+115 fre "RPO blocks executable" "main" 4
+115 fre "RPO block visited times == 1" "main" 2
+115 fre "RPO block visited times == 2" "main" 2
+115 fre "RPO num avail == 6" "main" 1
+118 vrp "Incremental SSA update" "main" 2
+118 vrp "Number of ASSERT_EXPR expressions inserted" "main" 1
+123 copyprop "Copies propagated" "main" 1
+123 copyprop "Statements deleted" "main" 1
+128 ch "RPO blocks" "main" 2
+128 ch "RPO iterations == 10" "main" 1
+128 ch "Incremental SSA update" "main" 1
+128 ch "RPO blocks visited" "main" 2
+128 ch "RPO blocks executable" "main" 2
+128 ch "RPO block visited times == 1" "main" 2
+128 ch "RPO num avail == 1" "main" 1
+128 ch "RPO num values == 3" "main" 1
+128 ch "RPO num lattice == 3" "main" 1
+128 ch "Eliminated" "main" 2
+132 dom "Copies propagated" "main" 1
+132 dom "Redundant expressions eliminated" "main" 1
+133 copyprop "Statements deleted" "main" 1
+146 pre "RPO blocks" "main" 7
+146 pre "compute_antic iterations == 2" "main" 1
+146 pre "RPO iterations == 12" "main" 1
+146 pre "RPO blocks visited" "main" 9
+146 pre "RPO num values == 11" "main" 1
+146 pre "RPO num lattice == 11" "main" 1
+146 pre "RPO blocks executable" "main" 7
+146 pre "RPO block visited times == 1" "main" 5
+146 pre "RPO block visited times == 2" "main" 2
+146 pre "insert iterations == 1" "main" 1
+146 pre "RPO num avail == 7" "main" 1
+154 loopinit "Incremental SSA update" "main" 1
+195 fre "RPO blocks" "main" 4
+195 fre "RPO iterations == 10" "main" 1
+195 fre "RPO num lattice == 14" "main" 1
+195 fre "RPO blocks visited" "main" 4
+195 fre "RPO num values == 14" "main" 1
+195 fre "RPO blocks executable" "main" 4
+195 fre "RPO block visited times == 1" "main" 4
+195 fre "RPO num avail == 10" "main" 1
+200 vrp "Incremental SSA update" "main" 1
+200 vrp "Number of ASSERT_EXPR expressions inserted" "main" 2
+252 optimized "unused VAR_DECLs removed" "main" 2
+284 combine "two-insn combine" "main" 4
+115 fre "RPO num values == 1" "_GLOBAL__sub_I_main" 1
+115 fre "RPO blocks" "_GLOBAL__sub_I_main" 1
+115 fre "RPO iterations == 10" "_GLOBAL__sub_I_main" 1
+115 fre "RPO blocks visited" "_GLOBAL__sub_I_main" 1
+115 fre "RPO blocks executable" "_GLOBAL__sub_I_main" 1
+115 fre "RPO block visited times == 1" "_GLOBAL__sub_I_main" 1
+115 fre "RPO num avail == 0" "_GLOBAL__sub_I_main" 1
+115 fre "RPO num lattice == 1" "_GLOBAL__sub_I_main" 1
+146 pre "RPO num values == 1" "_GLOBAL__sub_I_main" 1
+146 pre "RPO blocks" "_GLOBAL__sub_I_main" 1
+146 pre "RPO iterations == 10" "_GLOBAL__sub_I_main" 1
+146 pre "compute_antic iterations == 2" "_GLOBAL__sub_I_main" 1
+146 pre "RPO blocks visited" "_GLOBAL__sub_I_main" 1
+146 pre "RPO blocks executable" "_GLOBAL__sub_I_main" 1
+146 pre "RPO block visited times == 1" "_GLOBAL__sub_I_main" 1
+146 pre "RPO num avail == 0" "_GLOBAL__sub_I_main" 1
+146 pre "RPO num lattice == 1" "_GLOBAL__sub_I_main" 1
+146 pre "insert iterations == 1" "_GLOBAL__sub_I_main" 1
+195 fre "RPO num values == 1" "_GLOBAL__sub_I_main" 1
+195 fre "RPO blocks" "_GLOBAL__sub_I_main" 1
+195 fre "RPO iterations == 10" "_GLOBAL__sub_I_main" 1
+195 fre "RPO blocks visited" "_GLOBAL__sub_I_main" 1
+195 fre "RPO blocks executable" "_GLOBAL__sub_I_main" 1
+195 fre "RPO block visited times == 1" "_GLOBAL__sub_I_main" 1
+195 fre "RPO num avail == 0" "_GLOBAL__sub_I_main" 1
+195 fre "RPO num lattice == 1" "_GLOBAL__sub_I_main" 1

@@ -1,0 +1,14 @@
+0000000000000040 t _GLOBAL__sub_I_mul.cpp
+                 U _ZNSirsERi
+                 U _ZNSolsEPFRSoS_E
+                 U _ZNSolsEi
+                 U _ZNSt8ios_base4InitC1Ev
+                 U _ZNSt8ios_base4InitD1Ev
+                 U _ZSt3cin
+                 U _ZSt4cout
+                 U _ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_
+0000000000000000 b _ZStL8__ioinit
+                 U __cxa_atexit
+0000000000000000 t __cxx_global_var_init
+                 U __dso_handle
+0000000000000000 T main

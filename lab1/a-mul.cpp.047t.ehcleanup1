@@ -1,0 +1,57 @@
+
+;; Function main (main, funcdef_no=1776, decl_uid=46757, cgraph_uid=510, symbol_order=540)
+
+Before removal of unreachable regions:
+Eh tree:
+   2 must_not_throw
+   1 cleanup land:{1,<L5>}
+Reachable regions: n_bits = 3, set = {1 }
+Reachable landing pads: n_bits = 2, set = {1 }
+Removing unreachable region 2
+
+
+After removal of unreachable regions:
+Eh tree:
+   1 cleanup land:{1,<L5>}
+
+
+Removing basic block 8
+Removing unreachable region 1
+Merging blocks 2 and 9
+Merging blocks 5 and 6
+Merging blocks 5 and 7
+int main ()
+{
+  int f;
+  int n;
+  int i;
+  int n.0_1;
+  struct basic_ostream & _11;
+
+  <bb 2> :
+  std::basic_istream<char>::operator>> (&cin, &n);
+  goto <bb 4>; [100.00%]
+
+  <bb 3> :
+  f_15 = i_3 * f_4;
+  i_16 = i_3 + 1;
+
+  <bb 4> :
+  # i_3 = PHI <2(2), i_16(3)>
+  # f_4 = PHI <1(2), f_15(3)>
+  n.0_1 = n;
+  if (n.0_1 >= i_3)
+    goto <bb 3>; [INV]
+  else
+    goto <bb 5>; [INV]
+
+  <bb 5> :
+  # f_8 = PHI <f_4(4)>
+  _11 = std::basic_ostream<char>::operator<< (&cout, f_8);
+  std::basic_ostream<char>::operator<< (_11, endl);
+  n ={v} {CLOBBER};
+  return 0;
+
+}
+
+

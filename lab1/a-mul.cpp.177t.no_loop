@@ -1,0 +1,28 @@
+
+;; Function __static_initialization_and_destruction_0.constprop (_Z41__static_initialization_and_destruction_0ii.constprop.0, funcdef_no=2278, decl_uid=51721, cgraph_uid=1022, symbol_order=1200) (executed once)
+
+void __static_initialization_and_destruction_0.constprop ()
+{
+  int __initialize_p;
+  int __priority;
+
+  <bb 2> [local count: 1073741824]:
+  std::ios_base::Init::Init (&__ioinit);
+  __cxxabiv1::__cxa_atexit (__dt_comp , &__ioinit, &__dso_handle);
+  return;
+
+}
+
+
+
+;; Function _GLOBAL__sub_I_main (_GLOBAL__sub_I_main, funcdef_no=2277, decl_uid=51661, cgraph_uid=1011, symbol_order=1186) (executed once)
+
+void _GLOBAL__sub_I_main ()
+{
+  <bb 2> [local count: 1073741824]:
+  __static_initialization_and_destruction_0.constprop ();
+  return;
+
+}
+
+

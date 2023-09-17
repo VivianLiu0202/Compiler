@@ -1,0 +1,69 @@
+
+;; Function __static_initialization_and_destruction_0.constprop (_Z41__static_initialization_and_destruction_0ii.constprop.0, funcdef_no=2278, decl_uid=51721, cgraph_uid=1022, symbol_order=1200) (executed once)
+
+void __static_initialization_and_destruction_0.constprop ()
+{
+  int __initialize_p;
+  int __priority;
+
+  <bb 2> [local count: 1073741824]:
+  std::ios_base::Init::Init (&__ioinit);
+  __cxxabiv1::__cxa_atexit (__dt_comp , &__ioinit, &__dso_handle);
+  return;
+
+}
+
+
+
+;; Function main (main, funcdef_no=1776, decl_uid=46757, cgraph_uid=510, symbol_order=540) (executed once)
+
+int main ()
+{
+  int f;
+  int n;
+  int i;
+  int n.0_1;
+  struct basic_ostream & _8;
+  int n.0_14;
+
+  <bb 2> [local count: 118111600]:
+  std::basic_istream<char>::operator>> (&cin, &n);
+  n.0_14 = n;
+  if (n.0_14 > 1)
+    goto <bb 3>; [89.00%]
+  else
+    goto <bb 4>; [11.00%]
+
+  <bb 3> [local count: 955630225]:
+  # i_15 = PHI <i_12(3), 2(2)>
+  # f_16 = PHI <f_11(3), 1(2)>
+  f_11 = f_16 * i_15;
+  i_12 = i_15 + 1;
+  n.0_1 = n;
+  if (n.0_1 >= i_12)
+    goto <bb 3>; [89.00%]
+  else
+    goto <bb 4>; [11.00%]
+
+  <bb 4> [local count: 118111600]:
+  # f_17 = PHI <f_11(3), 1(2)>
+  _8 = std::basic_ostream<char>::operator<< (&cout, f_17);
+  std::basic_ostream<char>::operator<< (_8, endl);
+  n ={v} {CLOBBER};
+  return 0;
+
+}
+
+
+
+;; Function _GLOBAL__sub_I_main (_GLOBAL__sub_I_main, funcdef_no=2277, decl_uid=51661, cgraph_uid=1011, symbol_order=1186) (executed once)
+
+void _GLOBAL__sub_I_main ()
+{
+  <bb 2> [local count: 1073741824]:
+  __static_initialization_and_destruction_0.constprop ();
+  return;
+
+}
+
+

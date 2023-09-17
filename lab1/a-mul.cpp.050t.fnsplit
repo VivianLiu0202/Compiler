@@ -1,0 +1,229 @@
+
+;; Function std::basic_ostream<char>::operator<< (_ZNSolsEPFRSoS_E, funcdef_no=2038, decl_uid=43971, cgraph_uid=772, symbol_order=805)
+
+Not splitting: not inlinable.
+struct __ostream_type & std::basic_ostream<char>::operator<< (struct basic_ostream * const this, struct __ostream_type & (*<T6878>) (struct __ostream_type &) __pf)
+{
+  struct __ostream_type & _6;
+
+  <bb 2> [local count: 1073741824]:
+  _6 = __pf_2(D) (this_4(D));
+  return _6;
+
+}
+
+
+
+;; Function std::flush<char, std::char_traits<char> > (_ZSt5flushIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_, funcdef_no=2117, decl_uid=44191, cgraph_uid=851, symbol_order=884)
+
+Not splitting: not inlinable.
+struct basic_ostream & std::flush<char, std::char_traits<char> > (struct basic_ostream & __os)
+{
+  struct basic_ostream & _4;
+
+  <bb 2> [local count: 1073741824]:
+  _4 = std::basic_ostream<char>::flush (__os_2(D));
+  return _4;
+
+}
+
+
+
+;; Function __static_initialization_and_destruction_0 (_Z41__static_initialization_and_destruction_0ii, funcdef_no=2276, decl_uid=51655, cgraph_uid=1010, symbol_order=1067)
+
+Not splitting: not inlinable.
+void __static_initialization_and_destruction_0 (int __initialize_p, int __priority)
+{
+  <bb 2> [local count: 1073741823]:
+  if (__initialize_p_2(D) == 1)
+    goto <bb 3>; [34.00%]
+  else
+    goto <bb 5>; [66.00%]
+
+  <bb 3> [local count: 365072224]:
+  if (__priority_4(D) == 65535)
+    goto <bb 4>; [20.24%]
+  else
+    goto <bb 5>; [79.76%]
+
+  <bb 4> [local count: 73890618]:
+  std::ios_base::Init::Init (&__ioinit);
+  __cxxabiv1::__cxa_atexit (__dt_comp , &__ioinit, &__dso_handle);
+
+  <bb 5> [local count: 1073741824]:
+  return;
+
+}
+
+
+
+;; Function std::ctype<char>::widen (_ZNKSt5ctypeIcE5widenEc, funcdef_no=1524, decl_uid=39667, cgraph_uid=495, symbol_order=524)
+
+Not splitting: not inlinable.
+char_type std::ctype<char>::widen (const struct ctype * const this, char __c)
+{
+  char _1;
+  int _2;
+  int (*) () * _3;
+  int (*) () _5;
+  char_type _6;
+  char_type _13;
+  char_type _15;
+
+  <bb 2> [local count: 1073741824]:
+  _1 = this_9(D)->_M_widen_ok;
+  if (_1 != 0)
+    goto <bb 3>; [51.12%]
+  else
+    goto <bb 4>; [48.88%]
+
+  <bb 3> [local count: 548896825]:
+  _2 = (int) __c_11(D);
+  _15 = this_9(D)->_M_widen[_2];
+  // predicted unlikely by early return (on trees) predictor.
+  goto <bb 5>; [100.00%]
+
+  <bb 4> [local count: 524845000]:
+  std::ctype<char>::_M_widen_init (this_9(D));
+  _3 = this_9(D)->D.39781._vptr.facet;
+  _5 = MEM[(int (*) () *)_3 + 48B];
+  _13 = OBJ_TYPE_REF(_5;(const struct ctype)this_9(D)->6) (this_9(D), __c_11(D));
+
+  <bb 5> [local count: 1073741824]:
+  # _6 = PHI <_15(3), _13(4)>
+  return _6;
+
+}
+
+
+
+;; Function std::ctype<char>::do_widen (_ZNKSt5ctypeIcE8do_widenEc, funcdef_no=1529, decl_uid=39715, cgraph_uid=500, symbol_order=529)
+
+Not splitting: not inlinable.
+char_type std::ctype<char>::do_widen (const struct ctype * const this, char __c)
+{
+  <bb 2> [local count: 1073741824]:
+  return __c_1(D);
+
+}
+
+
+
+;; Function main (main, funcdef_no=1776, decl_uid=46757, cgraph_uid=510, symbol_order=540) (executed once)
+
+Not splitting: main function.
+int main ()
+{
+  int f;
+  int n;
+  int i;
+  int n.0_1;
+  struct basic_ostream & _11;
+
+  <bb 2> [local count: 118111600]:
+  std::basic_istream<char>::operator>> (&cin, &n);
+  goto <bb 4>; [100.00%]
+
+  <bb 3> [local count: 955630225]:
+  f_15 = i_3 * f_4;
+  i_16 = i_3 + 1;
+
+  <bb 4> [local count: 1073741824]:
+  # i_3 = PHI <2(2), i_16(3)>
+  # f_4 = PHI <1(2), f_15(3)>
+  n.0_1 = n;
+  if (n.0_1 >= i_3)
+    goto <bb 3>; [89.00%]
+  else
+    goto <bb 5>; [11.00%]
+
+  <bb 5> [local count: 118111600]:
+  # f_8 = PHI <f_4(4)>
+  _11 = std::basic_ostream<char>::operator<< (&cout, f_8);
+  std::basic_ostream<char>::operator<< (_11, endl);
+  n ={v} {CLOBBER};
+  return 0;
+
+}
+
+
+
+;; Function std::__check_facet<std::ctype<char> > (_ZSt13__check_facetISt5ctypeIcEERKT_PS3_, funcdef_no=2152, decl_uid=49954, cgraph_uid=886, symbol_order=919)
+
+Not splitting: not inlinable.
+const struct ctype & std::__check_facet<std::ctype<char> > (const struct ctype * __f)
+{
+  <bb 2> [local count: 1073741824]:
+  if (__f_1(D) == 0B)
+    goto <bb 3>; [0.04%]
+  else
+    goto <bb 4>; [99.96%]
+
+  <bb 3> [local count: 429496]:
+  std::__throw_bad_cast ();
+
+  <bb 4> [local count: 1073312329]:
+  return __f_1(D);
+
+}
+
+
+
+;; Function std::basic_ios<char>::widen (_ZNKSt9basic_iosIcSt11char_traitsIcEE5widenEc, funcdef_no=2116, decl_uid=43229, cgraph_uid=850, symbol_order=883)
+
+Not splitting: not inlinable.
+char_type std::basic_ios<char>::widen (const struct basic_ios * const this, char __c)
+{
+  const struct __ctype_type * _1;
+  const struct ctype & _6;
+  char_type _9;
+
+  <bb 2> [local count: 1073741824]:
+  _1 = this_4(D)->_M_ctype;
+  _6 = std::__check_facet<std::ctype<char> > (_1);
+  _9 = std::ctype<char>::widen (_6, __c_7(D));
+  return _9;
+
+}
+
+
+
+;; Function std::endl<char, std::char_traits<char> > (_ZSt4endlIcSt11char_traitsIcEERSt13basic_ostreamIT_T0_ES6_, funcdef_no=2037, decl_uid=44183, cgraph_uid=771, symbol_order=804)
+
+Not splitting: not inlinable.
+struct basic_ostream & std::endl<char, std::char_traits<char> > (struct basic_ostream & __os)
+{
+  int (*) () * _1;
+  long int _3;
+  sizetype _4;
+  struct basic_ios * _5;
+  char _11;
+  struct basic_ostream & _13;
+  struct basic_ostream & _15;
+
+  <bb 2> [local count: 1073741824]:
+  _1 = __os_9(D)->_vptr.basic_ostream;
+  _3 = MEM[(long int *)_1 + -24B];
+  _4 = (sizetype) _3;
+  _5 = __os_9(D) + _4;
+  _11 = std::basic_ios<char>::widen (_5, 10);
+  _13 = std::basic_ostream<char>::put (__os_9(D), _11);
+  _15 = std::flush<char, std::char_traits<char> > (_13);
+  return _15;
+
+}
+
+
+
+;; Function _GLOBAL__sub_I_main (_GLOBAL__sub_I_main, funcdef_no=2277, decl_uid=51661, cgraph_uid=1011, symbol_order=1186) (executed once)
+
+Not splitting: not inlinable.
+void _GLOBAL__sub_I_main ()
+{
+  <bb 2> [local count: 1073741824]:
+  __static_initialization_and_destruction_0 (1, 65535);
+  return;
+
+}
+
+
