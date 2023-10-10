@@ -81,7 +81,7 @@
 //类型改称char*，因为要返回的是后缀表达式，是字符串
 #endif
 char idStr[50];
-char numStr[50];
+char numStr[100];
 int yylex();
 extern int yyparse();
 FILE* yyin;
@@ -1156,49 +1156,49 @@ yyreduce:
 
   case 5: /* expr: expr ADD expr  */
 #line 47 "expr3.y"
-                                { yyval=(char*)malloc(50*sizeof(char)); strcpy(yyval,yyvsp[-2]); strcat(yyval,yyvsp[0]); strcat(yyval,"+ "); }
+                                { yyval=malloc(strlen(yyvsp[-2]) + strlen(yyvsp[0]) + 2); strcpy(yyval,yyvsp[-2]); strcat(yyval,yyvsp[0]); strcat(yyval,"+ "); }
 #line 1161 "y.tab.c"
     break;
 
   case 6: /* expr: expr MINUS expr  */
 #line 49 "expr3.y"
-                                  { yyval=(char*)malloc(50*sizeof(char)); strcpy(yyval,yyvsp[-2]); strcat(yyval,yyvsp[0]); strcat(yyval,"- "); }
+                                  { yyval=malloc(strlen(yyvsp[-2]) + strlen(yyvsp[0]) + 5); strcpy(yyval,yyvsp[-2]); strcat(yyval,yyvsp[0]); strcat(yyval,"- "); }
 #line 1167 "y.tab.c"
     break;
 
   case 7: /* expr: expr MUL expr  */
 #line 50 "expr3.y"
-                                { yyval=(char*)malloc(50*sizeof(char)); strcpy(yyval,yyvsp[-2]); strcat(yyval,yyvsp[0]); strcat(yyval,"* "); }
+                                { yyval=malloc(strlen(yyvsp[-2]) + strlen(yyvsp[0]) + 5); strcpy(yyval,yyvsp[-2]); strcat(yyval,yyvsp[0]); strcat(yyval,"* "); }
 #line 1173 "y.tab.c"
     break;
 
   case 8: /* expr: expr DIV expr  */
 #line 51 "expr3.y"
-                                { yyval=(char*)malloc(50*sizeof(char)); strcpy(yyval,yyvsp[-2]); strcat(yyval,yyvsp[0]); strcat(yyval,"/ "); }
+                                { yyval=malloc(strlen(yyvsp[-2]) + strlen(yyvsp[0]) + 5); strcpy(yyval,yyvsp[-2]); strcat(yyval,yyvsp[0]); strcat(yyval,"/ "); }
 #line 1179 "y.tab.c"
     break;
 
   case 9: /* expr: L_PAR expr R_PAR  */
 #line 52 "expr3.y"
-                                 { yyval=(char *)malloc(50*sizeof(char)); strcpy(yyval,yyvsp[-1]); }
+                                 { yyval=malloc(strlen(yyvsp[-1]) + 5); strcpy(yyval,yyvsp[-1]); }
 #line 1185 "y.tab.c"
     break;
 
   case 10: /* expr: MINUS expr  */
 #line 53 "expr3.y"
-                                          {yyval=(char *)malloc(50*sizeof(char)); strcpy(yyval,yyvsp[0]); strcat(yyval,"- "); }
+                                          {yyval=malloc(strlen(yyvsp[0]) + 5); strcpy(yyval,yyvsp[0]); strcat(yyval,"- "); }
 #line 1191 "y.tab.c"
     break;
 
   case 11: /* expr: NUMBER  */
 #line 55 "expr3.y"
-                        {yyval=(char *)malloc(50*sizeof(char)); strcpy(yyval,yyvsp[0]); strcat(yyval," "); }
+                        {yyval=malloc(strlen(yyvsp[0]) + 5); strcpy(yyval,yyvsp[0]); strcat(yyval," "); }
 #line 1197 "y.tab.c"
     break;
 
   case 12: /* expr: ID  */
 #line 56 "expr3.y"
-                    {yyval=(char *)malloc(50*sizeof(char)); strcpy(yyval,yyvsp[0]); strcat(yyval," ");}
+                    {yyval=malloc(strlen(yyvsp[0]) + 5); strcpy(yyval,yyvsp[0]); strcat(yyval," ");}
 #line 1203 "y.tab.c"
     break;
 
@@ -1411,26 +1411,27 @@ int yylex()
         }
         //先判断数字，与上一问是一样的，改成了字符串
         else if(isdigit(t)){
-            int ti=0;
+            int i=0;
             while(isdigit(t))
             {
-                numStr[ti] = t;
-                ti++;
+                numStr[i] = t;
+                i++;
                 t=getchar();
             }
-            numStr[ti]='\0';//数组最后一个元素加上"\0"，表示字符串结束
+            numStr[i]='\0';//数组最后一个元素加上"\0"，表示字符串结束
             yylval=numStr;
             ungetc(t,stdin);
             return NUMBER;
-        }else if((t>='a'&&t<='z')||(t>='A'&&t<='Z')||(t=='_')){
-            int ti=0;
+        }
+        else if((t>='a'&&t<='z')||(t>='A'&&t<='Z')||(t=='_')){
+            int i=0;
             while((t>='a'&&t<='z')||(t>='A'&&t<='Z')||(t=='_')||(isdigit(t)))
             {
-                idStr[ti]=t;
-                ti++;
+                idStr[i]=t;
+                i++;
                 t=getchar();
             }
-            idStr[ti]='\0';//数组最后一个元素加上"\0"，表示字符串结束
+            idStr[i]='\0';//数组最后一个元素加上"\0"，表示字符串结束
             yylval=idStr;
             ungetc(t,stdin);
             return ID; 

@@ -11,7 +11,7 @@
 //类型改称char*，因为要返回的是后缀表达式，是字符串
 #endif
 char idStr[50];
-char numStr[50];
+char numStr[100];
 int yylex();
 extern int yyparse();
 FILE* yyin;
@@ -44,16 +44,16 @@ lines   :       lines expr ';' { printf("%s\n", $2); }
         |
         ;
 //TODO:完善表达式的规则./
-expr    :       expr ADD expr   { $$=(char*)malloc(50*sizeof(char)); strcpy($$,$1); strcat($$,$3); strcat($$,"+ "); }
+expr    :       expr ADD expr   { $$=malloc(strlen($1) + strlen($3) + 2); strcpy($$,$1); strcat($$,$3); strcat($$,"+ "); }
                 //a+b变为ab+
-        |       expr MINUS expr   { $$=(char*)malloc(50*sizeof(char)); strcpy($$,$1); strcat($$,$3); strcat($$,"- "); }
-        |       expr MUL expr   { $$=(char*)malloc(50*sizeof(char)); strcpy($$,$1); strcat($$,$3); strcat($$,"* "); }
-        |       expr DIV expr   { $$=(char*)malloc(50*sizeof(char)); strcpy($$,$1); strcat($$,$3); strcat($$,"/ "); } 
-        |       L_PAR expr R_PAR { $$=(char *)malloc(50*sizeof(char)); strcpy($$,$2); }
-        |       MINUS expr %prec UMINUS   {$$=(char *)malloc(50*sizeof(char)); strcpy($$,$2); strcat($$,"- "); }
+        |       expr MINUS expr   { $$=malloc(strlen($1) + strlen($3) + 5); strcpy($$,$1); strcat($$,$3); strcat($$,"- "); }
+        |       expr MUL expr   { $$=malloc(strlen($1) + strlen($3) + 5); strcpy($$,$1); strcat($$,$3); strcat($$,"* "); }
+        |       expr DIV expr   { $$=malloc(strlen($1) + strlen($3) + 5); strcpy($$,$1); strcat($$,$3); strcat($$,"/ "); } 
+        |       L_PAR expr R_PAR { $$=malloc(strlen($2) + 5); strcpy($$,$2); }
+        |       MINUS expr %prec UMINUS   {$$=malloc(strlen($2) + 5); strcpy($$,$2); strcat($$,"- "); }
         //将NUMBER视为终结符，添加语义动作，将yylval的值赋给NUMBER的属性值
-        |       NUMBER  {$$=(char *)malloc(50*sizeof(char)); strcpy($$,$1); strcat($$," "); }
-        |       ID  {$$=(char *)malloc(50*sizeof(char)); strcpy($$,$1); strcat($$," ");}
+        |       NUMBER  {$$=malloc(strlen($1) + 5); strcpy($$,$1); strcat($$," "); }
+        |       ID  {$$=malloc(strlen($1) + 5); strcpy($$,$1); strcat($$," ");}
         ;
 %%
 
@@ -69,26 +69,27 @@ int yylex()
         }
         //先判断数字，与上一问是一样的，改成了字符串
         else if(isdigit(t)){
-            int ti=0;
+            int i=0;
             while(isdigit(t))
             {
-                numStr[ti] = t;
-                ti++;
+                numStr[i] = t;
+                i++;
                 t=getchar();
             }
-            numStr[ti]='\0';//数组最后一个元素加上"\0"，表示字符串结束
+            numStr[i]='\0';//数组最后一个元素加上"\0"，表示字符串结束
             yylval=numStr;
             ungetc(t,stdin);
             return NUMBER;
-        }else if((t>='a'&&t<='z')||(t>='A'&&t<='Z')||(t=='_')){
-            int ti=0;
+        }
+        else if((t>='a'&&t<='z')||(t>='A'&&t<='Z')||(t=='_')){
+            int i=0;
             while((t>='a'&&t<='z')||(t>='A'&&t<='Z')||(t=='_')||(isdigit(t)))
             {
-                idStr[ti]=t;
-                ti++;
+                idStr[i]=t;
+                i++;
                 t=getchar();
             }
-            idStr[ti]='\0';//数组最后一个元素加上"\0"，表示字符串结束
+            idStr[i]='\0';//数组最后一个元素加上"\0"，表示字符串结束
             yylval=idStr;
             ungetc(t,stdin);
             return ID; 
