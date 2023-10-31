@@ -11,7 +11,7 @@ NFA re2nfa(string re) {
     for (auto c: re){
         if(c=='['){
             is_mid = 1;
-            prexp += '(';
+            prexp.push_back('(');
         }
         else if (c==']'){
             string mid = parse_range(middle);
@@ -20,9 +20,9 @@ NFA re2nfa(string re) {
                 prexp += '|';
             }
             prexp.pop_back();
-            prexp += ')';
-            is_mid = 0;
-            middle.clear();
+            prexp.push_back(')');
+            is_mid = false;
+            middle = "";
         }
         else if (is_mid){
             middle += c;
