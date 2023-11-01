@@ -12,11 +12,11 @@
 #include <cstring>
 #include <ctime>
 #include <climits>
-
+#include <numeric> 
 using namespace std;
 
 #define OTHER '^'
-#define ERROR -1 
+#define ERROR -1
 
 //NFA信息
 struct NFA {
@@ -45,7 +45,7 @@ struct Edge {
     int from; //起点
     int to; //终点
     char c; //边的条件
-    Edge(int f, int t, char ch) : from(f), to(t), c(ch) {}
+    Edge(int f, char c, int t) : from(f), c(c), to(t) {}  // 构造函数
 };
 
 /**

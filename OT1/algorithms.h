@@ -9,11 +9,8 @@ void nfa2dfa(NFA nfa, DFA &dfa); //NFA转DFA
 DFA minimize_dfa(DFA dfa); //最小化DFA
 
 
-string parse_range(string); //范围解析的函数
-Graph parse_re(string,int&);  //解析正则式的函数，递归调用传递当前一分配的状态进去
-void get_closure(NFA,vector< set<int> >&,int,vector<bool>&); //获取闭包    
-
-void writeNfaData(NFA, string);  // 将NFA写入到nfa文件中
-void writeDfaData(DFA, string);  // 将转化成的dfa写入到dfa文件中
+string parse_range(string);                                    // 范围解析的函数, 可以解析出如A-Z, a-zA-Z0-9_- 这一类范围定义的字符
+void get_closure(NFA, vector<set<int> >&, int, vector<bool>&);  // 分别是nfa, 全部的closure, 当前状态, 是否访问过
+Graph parse_re(string, int&);                                  // 解析re_exp的函数, 递归调用, 传递当前已分配状态进去(当前已分配)
 
 #endif  // !__ALGORITHMS_H_

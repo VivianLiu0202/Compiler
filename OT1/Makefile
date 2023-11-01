@@ -3,7 +3,7 @@ CXXFLAGS = -std=c++11
 
 SRC = main.cpp algorithms.cpp
 OBJS = $(SRC:.cpp=.o)
-EXEC = main.exe
+EXEC = main
 
 all: $(EXEC)
 
