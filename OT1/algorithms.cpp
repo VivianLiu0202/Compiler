@@ -26,7 +26,7 @@ NFA re2nfa(string rexp) {  // Function to convert regular expression to NFA
     rexp = move(prexp);
 
     int state = 0;
-    Graph nfa_graph = parse_re(rexp, state);
+    Graph nfa_graph = Thompson(rexp, state);
     cout<<"正规式转DFA:"<<endl;
     cout << "start: " << nfa_graph.start << endl;
     cout << "end: " << nfa_graph.end << endl;
@@ -324,7 +324,7 @@ void get_closure(NFA nfa, vector<set<int> > &closures, int state, vector<bool> &
 }
 
 
-Graph parse_re(string rexp, int &state) {
+Graph Thompson(string rexp, int &state) {
     if (rexp.size() == 1) {  // ! 当只有一个字符时, 构造基本的转移函数, 然后返回. 这是这个函数的递归基例
         Graph base;
         base.start = state++;
@@ -361,7 +361,7 @@ Graph parse_re(string rexp, int &state) {
             char c = rexp[i];
             if (c == '(') {
                 if (sub_rexp.size() && bra.size() == 0) {
-                    graphes.push_back(parse_re(sub_rexp, state));
+                    graphes.push_back(Thompson(sub_rexp, state));
                     sub_rexp.clear();
                 }
                 bra.push('*');
@@ -372,9 +372,9 @@ Graph parse_re(string rexp, int &state) {
                 if (bra.size() == 0) {  // 最外层括号被弹出, 将括号包裹的部分进行解析
                     if (i + 1 < rexp.size() && (rexp[i + 1] == '*' || rexp[i + 1] == '+')) {  // * 对 * 和 + 的解析
                         if (rexp[i + 1] == '+')
-                            graphes.push_back(parse_re(sub_rexp, state));
+                            graphes.push_back(Thompson(sub_rexp, state));
                         int start = state++;
-                        graphes.push_back(parse_re(sub_rexp, state));
+                        graphes.push_back(Thompson(sub_rexp, state));
                         int end = state++;
                         graphes.back().edges.push_back(Edge(start, '-', graphes.back().start));
                         graphes.back().edges.push_back(Edge(graphes.back().end, '-', graphes.back().start));
@@ -384,7 +384,7 @@ Graph parse_re(string rexp, int &state) {
                         graphes.back().end   = end;
                         i++;
                     } else {
-                        graphes.push_back(parse_re(sub_rexp, state));
+                        graphes.push_back(Thompson(sub_rexp, state));
                     }
                     sub_rexp.clear();
                 }
@@ -393,7 +393,7 @@ Graph parse_re(string rexp, int &state) {
             }
         }
         if (sub_rexp.size()) {
-            graphes.push_back(parse_re(sub_rexp, state));
+            graphes.push_back(Thompson(sub_rexp, state));
             sub_rexp.clear();
         }
     } 
@@ -410,7 +410,7 @@ Graph parse_re(string rexp, int &state) {
                     continue;
                 }
                 if (sub_rexp.size()) {
-                    graphes.push_back(parse_re(sub_rexp, state));
+                    graphes.push_back(Thompson(sub_rexp, state));
                     sub_rexp.clear();
                 }
             } else {
@@ -418,7 +418,7 @@ Graph parse_re(string rexp, int &state) {
             }
         }
         if (sub_rexp.size()) {
-            graphes.push_back(parse_re(sub_rexp, state));
+            graphes.push_back(Thompson(sub_rexp, state));
             sub_rexp.clear();
         }
         merge.end = state++;
@@ -435,9 +435,9 @@ Graph parse_re(string rexp, int &state) {
             next_rexp += rexp[i];
             if (i + 1 < rexp.size() && (rexp[i + 1] == '*' || rexp[i + 1] == '+')) {  // * 对 * 和 + 的解析
                 if (rexp[i + 1] == '+')
-                    graphes.push_back(parse_re(next_rexp, state));
+                    graphes.push_back(Thompson(next_rexp, state));
                 int start = state++;
-                graphes.push_back(parse_re(next_rexp, state));
+                graphes.push_back(Thompson(next_rexp, state));
                 int end = state++;
                 graphes.back().edges.push_back(Edge(start, '-', graphes.back().start));
                 graphes.back().edges.push_back(Edge(graphes.back().end, '-', graphes.back().start));
@@ -447,7 +447,7 @@ Graph parse_re(string rexp, int &state) {
                 graphes.back().end   = end;
                 i++;
             } else {
-                graphes.push_back(parse_re(next_rexp, state));
+                graphes.push_back(Thompson(next_rexp, state));
             }
             next_rexp.clear();
         }
